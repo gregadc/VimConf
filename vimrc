@@ -21,6 +21,8 @@ Plugin 'davidhalter/jedi-vim'
 
 Plugin 'rust-lang/rust.vim'
 
+Plugin 'preservim/nerdtree'
+
 call vundle#end()
 filetype plugin indent on    " required
 
@@ -72,6 +74,9 @@ set undolevels=1000
 set title
 set visualbell
 set noerrorbells
+
+" Start NERDTree and leave the cursor in it.
+autocmd VimEnter * NERDTree
 
 " Remember cursor
 if has("autocmd")
