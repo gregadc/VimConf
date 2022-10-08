@@ -7,21 +7,20 @@ call vundle#begin()
 " Make sure you use single quotes
 Plugin 'VundleVim/Vundle.vim'
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plugin 'junegunn/vim-easy-align'
-
-" Plugin outside ~/.vim/plugged with post-update hook
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+Plugin 'junegunn/vim-easy-align'
 
 Plugin 'dense-analysis/ale'
 
 Plugin 'integralist/vim-mypy'
 
-Plugin 'davidhalter/jedi-vim'
-
 Plugin 'rust-lang/rust.vim'
 
 Plugin 'preservim/nerdtree'
+
+Plugin 'ycm-core/youcompleteme'
+" Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -37,7 +36,8 @@ let g:syntastic_python_checkers = ['pylint', 'pyls', 'pycodestyle']
 let g:rustfmt_autosave = 1
 let g:ale_completion_enabled = 1
 
-"let g:jedi#environment_path = "/Users/gregoryamorim/anaconda3/bin/python3.8"
+"let g:jedi#environment_path = '/Users/gregoryamorim/anaconda3/bin/python3.8'
+"let g:jedi#use_splits_not_buffers = 'left'
 
 "set statusline+=%{SyntasticStatuslineFlag()}
 
@@ -78,6 +78,11 @@ set noerrorbells
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
 
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+
 " Remember cursor
 if has("autocmd")
     filetype plugin indent on
@@ -91,3 +96,4 @@ endif
 
 set backspace=indent,eol,start
 set completeopt=menu,menuone,preview,noselect,noinsert
+hi PmenuSel ctermfg=green
