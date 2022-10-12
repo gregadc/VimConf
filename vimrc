@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 
 Plugin 'junegunn/vim-easy-align'
 
@@ -19,8 +20,8 @@ Plugin 'rust-lang/rust.vim'
 
 Plugin 'preservim/nerdtree'
 
-Plugin 'ycm-core/youcompleteme'
-" Plugin 'davidhalter/jedi-vim'
+" Plugin 'ycm-core/youcompleteme'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 filetype plugin indent on    " required
