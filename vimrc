@@ -138,3 +138,4 @@ inoremap <C-p> <C-o>:set invpaste paste?<CR>
 nnoremap <C-f> :Files<CR>
 " Shorcut open ripgrep :RG
 nnoremap <C-c> :Rg<CR>
+" nnoremap <C-c> :Rg -F
