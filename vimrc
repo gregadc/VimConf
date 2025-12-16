@@ -134,8 +134,10 @@ hi PmenuSel ctermfg=green
 " Shorcut Toggle paste mode avec Ctrl + p
 nnoremap <C-p> :set invpaste paste?<CR>
 inoremap <C-p> <C-o>:set invpaste paste?<CR>
+
 " Shorcut open :Files
 nnoremap <C-f> :Files<CR>
+
 " Shorcut open ripgrep :RG
 nnoremap <C-c> :Rg<CR>
 " nnoremap <C-c> :Rg -F
